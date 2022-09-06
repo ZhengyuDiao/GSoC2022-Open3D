@@ -26,7 +26,7 @@ In consideration of saving time, `TriangleMesh::create_box` was implemented acco
 
 ### 2. Improve point cloud I/O ([PR #5404](https://github.com/isl-org/Open3D/pull/5404), [PR #5448](https://github.com/isl-org/Open3D/pull/5448))
 
-Compared with the legacy module, the tensor-based point cloud I/O support was limited before. I implemented _FileTXT.cpp_ to reach the feature of reading and writing TXT-like format files, including XYZ, XYZI, XYZN, XYZRGB files.
+Compared with the legacy module, the tensor-based point cloud I/O support was limited before. I implemented `cpp/open3d/t/op/file_format/FileTXT.cpp` to reach the feature of reading and writing TXT-like format files, including XYZ, XYZI, XYZN, XYZRGB files.
 
 There are two functions `io::ReadPointCloudFromTXT` and `io::WritePointCloudToTXT` in `FileTXT.cpp`. In the `io::ReadPointCloudFromTXT` function, I used a line buffer to get the data of each line in the file and copied it directly into the constructed point cloud, which is highly efficient. The same operation goes for another function.
 
@@ -34,7 +34,7 @@ In order to be consistent with tensor-based creation APIs, I also modified the d
 
 ### 3. Fix textures loading of GLB format ([PR #5443](https://github.com/isl-org/Open3D/pull/5443))
 
-The glb-file is a fairly new format that was introduced only in 2015 in order to represent GLTF files in a binary format. It can store 3D data including scenes, models, lighting, and material. Previously, Open3D was not able to load the embedded textures in GLB files correctly. I updated `LoadTextures` function in legacy FileASSIMP.cpp and fix this problem.
+The glb-file is a fairly new format that was introduced only in 2015 in order to represent GLTF files in a binary format. It can store 3D data including scenes, models, lighting, and material. Previously, Open3D was not able to load the embedded textures in GLB files correctly. I updated `LoadTextures` function in `cpp/open3d/io/file_format/FileASSIMP.cpp` and fix this problem.
 
 Specifically, I used `scence::GetEmbeddedTexture` to get the embedded texture in the GLB file. Next, I implemented the `io::CreateImageFromMemory` function to create the texture image from buffers, which supports PNG and JPG formats. In addition, I added two example models `AvocadoModel` and `DamagedHelmetModel` as unit tests.
 
