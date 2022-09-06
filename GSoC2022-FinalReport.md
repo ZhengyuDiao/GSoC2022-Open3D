@@ -22,7 +22,7 @@ I implemented  _TriangleMeshFactory.cpp_ to support multiple geometry creation A
 - _create_tetrahedron_
 - _create_torus_
 
-In consideration of saving time, _create_box_ is implemented according to the definition of the box and other creation APIs are implemented by _fromLegacy_ function.  
+In consideration of saving time, `create_box` was implemented according to the definition of the box and other creation APIs were implemented by `fromLegacy` function.  
 
 ### 2. Improve point cloud I/O ([PR#5404](https://github.com/isl-org/Open3D/pull/5404), [PR#5448](https://github.com/isl-org/Open3D/pull/5448))
 
@@ -62,7 +62,7 @@ Geometry sampling is a basic functionality for 3D data processing libraries, inc
 
 ## Acknowledgements
 
-I would like to thank my mentor, YIxing for the constant support he provided. We always kept the regular and smooth communication during the project. This is an amazing experience and I really appreciate him for a lot of what I learned along the way.  Also, thank you to everyone in Open3D who helped me improve the project.
+I would like to thank my mentor, Yixing for the constant support he provided. We always kept the regular and smooth communication during the project. This is a wonderful experience and I really appreciate him for a lot of what I learned along the way. Also, thank you to everyone in Open3D who helped me improve the project.
 
 
 
