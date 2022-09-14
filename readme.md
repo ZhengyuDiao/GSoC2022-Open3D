@@ -26,7 +26,7 @@ In consideration of saving time, `TriangleMesh::create_box` was implemented acco
 
 ### 2. Improve point cloud I/O ([PR #5404](https://github.com/isl-org/Open3D/pull/5404), [PR #5448](https://github.com/isl-org/Open3D/pull/5448))
 
-Compared with the legacy module, the tensor-based point cloud I/O support was limited before. I implemented `cpp/open3d/t/op/file_format/FileTXT.cpp` to reach the feature of reading and writing TXT-like format files, including XYZ, XYZI, XYZN, XYZRGB files.
+Compared with the legacy module, the tensor-based point cloud I/O support was limited before. I implemented `cpp/open3d/t/io/file_format/FileTXT.cpp` to reach the feature of reading and writing TXT-like format files, including XYZ, XYZI, XYZN, XYZRGB files.
 
 There are two functions `io::ReadPointCloudFromTXT` and `io::WritePointCloudToTXT` in `FileTXT.cpp`. In the `io::ReadPointCloudFromTXT` function, I used a line buffer to get the data of each line in the file and copied it directly into the constructed point cloud, which is highly efficient. The same operation goes for another function.
 
